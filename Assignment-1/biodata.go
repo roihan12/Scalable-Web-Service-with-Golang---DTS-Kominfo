@@ -7,35 +7,56 @@ import (
 )
 
 type Friend struct {
-	ID      int
-	Name    string
-	Address string
-	Job     string
-	Reason  string
+	ID        int
+	Nama      string
+	Alamat    string
+	Pekerjaan string
+	Alasan    string
 }
 
 func getFriendByID(id int) (Friend, error) {
 	friends := map[int]Friend{
 		1: {
-			ID:      1,
-			Name:    "John Doe",
-			Address: "123 Main St, Springfield, IL",
-			Job:     "Software Engineer",
-			Reason:  "Interested in learning Go",
+			ID:        1,
+			Nama:      "Roihan Sori",
+			Alamat:    "Kabupaten Bogor",
+			Pekerjaan: "Fresh Graduate",
+			Alasan:    " Bahasanya simpel, Mudah Dipahami, dan sedang banyak di cari perusahaan startup",
 		},
 		2: {
-			ID:      2,
-			Name:    "Jane Smith",
-			Address: "456 Oak Ave, Anytown, CA",
-			Job:     "Data Scientist",
-			Reason:  "Wants to expand programming skills",
+			ID:        2,
+			Nama:      "Hafiz",
+			Alamat:    "Surabaya",
+			Pekerjaan: "Mahasiswa",
+			Alasan:    "Ingin mengembangkan aplikasi web dengan cepat",
 		},
 		3: {
-			ID:      3,
-			Name:    "Alice Johnson",
-			Address: "789 Pine Rd, Somewhere, TX",
-			Job:     "Web Developer",
-			Reason:  "Heard good things about Go language",
+			ID:        3,
+			Nama:      "Budi",
+			Alamat:    "Bandung",
+			Pekerjaan: "Developer",
+			Alasan:    "Untuk memperluas kemampuan dalam membangun infrastruktur backend",
+		},
+		4: {
+			ID:        4,
+			Nama:      "Dinda",
+			Alamat:    "Semarang",
+			Pekerjaan: "Frontend Developer",
+			Alasan:    "Ingin memperluas pengetahuan tentang pengembangan perangkat lunak terutama backend",
+		},
+		5: {
+			ID:        5,
+			Nama:      "Siti",
+			Alamat:    "Yogyakarta",
+			Pekerjaan: "UI/UX Designer",
+			Alasan:    "Ingin memahami backend untuk meningkatkan kolaborasi dengan tim pengembang",
+		},
+		6: {
+			ID:        6,
+			Nama:      "Amelia",
+			Alamat:    "Kabupaten Bogor",
+			Pekerjaan: "Fresh Graduate",
+			Alasan:    "Stabil dan Aman: Golang punya cara tangani kesalahan yang bagus, jadi aplikasi yang kamu buat cenderung lebih aman dan stabil.",
 		},
 	}
 
@@ -48,13 +69,13 @@ func getFriendByID(id int) (Friend, error) {
 
 func main() {
 	if len(os.Args) < 2 {
-		fmt.Println("Usage: go run biodata.go <friendID>")
+		fmt.Println(" ID belum dimasukkan! Gunakan: go run biodata.go 1")
 		return
 	}
 
 	friendID, err := strconv.Atoi(os.Args[1])
 	if err != nil {
-		fmt.Println("Invalid friend ID")
+		fmt.Println("Invalid ID ex: 1")
 		return
 	}
 
@@ -65,8 +86,8 @@ func main() {
 	}
 
 	fmt.Printf("Nama: %s\nAlamat: %s\nPekerjaan: %s\nAlasan ikut kelas Golang: %s\n",
-		friend.Name,
-		friend.Address,
-		friend.Job,
-		friend.Reason)
+		friend.Nama,
+		friend.Alamat,
+		friend.Pekerjaan,
+		friend.Alasan)
 }
