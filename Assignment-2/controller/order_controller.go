@@ -20,15 +20,15 @@ func NewOrderController(orderService service.OrderService) *orderController {
 
 // CreateOrder godoc
 //
-// @Summary		Create new order
-// @Description	Create new order
-// @Tags		Order
-// @Accept		json
-// @Produce		json
-// @Param		request	body		model.OrderCreateRequest	true	"request is required"
-// @Success		200		{object}	model.OrderResponse
-// @Failure		400		{object}	model.APIError
-// @Failure		500		{object}	model.APIError
+//	@Summary		Create new order
+//	@Description	Create new order
+//	@Tags			Order
+//	@Accept			json
+//	@Produce		json
+//	@Param			request	body		model.OrderCreateRequest	true	"request is required"
+//	@Success		200		{object}	model.OrderResponse
+//	@Failure		400		{object}	model.APIError
+//	@Failure		500		{object}	model.APIError
 //
 //	@Router			/orders [post]
 func (controller *orderController) CreateOrder(ctx *gin.Context) {
@@ -60,15 +60,15 @@ func (controller *orderController) CreateOrder(ctx *gin.Context) {
 
 // GetAllOrder godoc
 //
-//	@Summary	Get all orders
+//	@Summary		Get all orders
 //	@Description	Get all details orders
 //	@Tags			Order
 //	@Accept			json
 //	@Produce		json
 //
-// @Failure		500		{object}	model.APIError
+//	@Failure		500	{object}	model.APIError
 //
-//	@Success		200	{array}	model.OrderResponse
+//	@Success		200	{array}		model.OrderResponse
 //	@Router			/orders [get]
 func (controller *orderController) GetAllOrder(ctx *gin.Context) {
 	response, err := controller.orderService.GetAllOrders()
@@ -89,7 +89,7 @@ func (controller *orderController) GetAllOrder(ctx *gin.Context) {
 
 // GetOrderById godoc
 //
-//	@Summary	Get one order by id
+//	@Summary		Get one order by id
 //	@Description	Get details order by id
 //	@Tags			Order
 //	@Accept			json
@@ -126,7 +126,7 @@ func (controller *orderController) GetOrderById(ctx *gin.Context) {
 
 // DeleteOrder godoc
 //
-//	@Summary	Delete order by id
+//	@Summary		Delete order by id
 //	@Description	Delete order by id
 //	@Tags			Order
 //	@Accept			json
@@ -134,7 +134,7 @@ func (controller *orderController) GetOrderById(ctx *gin.Context) {
 //	@Param			id	path		string			true	"id"
 //	@Failure		400	{object}	model.APIError	"We need ID!!"
 //	@Failure		404	{object}	model.APIError	"Can not find ID"
-//	@Success		200	{object}	string	"Order deleted succcessfully"
+//	@Success		200	{object}	string			"Order deleted succcessfully"
 //	@Router			/orders/{id} [delete]
 func (controller *orderController) DeleteOrder(ctx *gin.Context) {
 	orderID := ctx.Param("id")
@@ -161,18 +161,18 @@ func (controller *orderController) DeleteOrder(ctx *gin.Context) {
 
 // UpdateOrder godoc
 //
-// @Summary		Update order
-// @Description	Update new order
-// @Tags		Order
-// @Accept		json
-// @Produce		json
+//	@Summary		Update order
+//	@Description	Update new order
+//	@Tags			Order
+//	@Accept			json
+//	@Produce		json
 //
-//	@Param			id	path		string			true	"id"
+//	@Param			id		path		string						true	"id"
 //
-// @Param		request	body		model.OrderUpdateRequest	true	"request is required"
-// @Success		200		{object}	model.OrderResponse
-// @Failure		400		{object}	model.APIError
-// @Failure		500		{object}	model.APIError
+//	@Param			request	body		model.OrderUpdateRequest	true	"request is required"
+//	@Success		200		{object}	model.OrderResponse
+//	@Failure		400		{object}	model.APIError
+//	@Failure		500		{object}	model.APIError
 //
 //	@Router			/orders/{id} [put]
 func (controller *orderController) UpdateOrder(ctx *gin.Context) {
