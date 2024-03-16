@@ -41,7 +41,7 @@ func (controller *orderController) CreateOrder(ctx *gin.Context) {
 		})
 		return
 	}
-
+	
 	response, err := controller.orderService.CreateOrder(newOrder)
 	if err != nil {
 		ctx.JSON(http.StatusInternalServerError, gin.H{
